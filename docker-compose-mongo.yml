@@ -31,3 +31,8 @@ services:
          ]
       })
       '
+  redis:
+    container_name: record_management_redis
+    image: redis
+    ports:
+      - "6379:6379"

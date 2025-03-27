@@ -6,9 +6,12 @@ import {
   IsInt,
   IsEnum,
   IsOptional,
+  IsArray,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { RecordFormat, RecordCategory } from '../schemas/record.enum';
+
+import { RecordCategory, RecordFormat } from '../common/enum/record.enum';
+import { ITrackList } from '../common/interface/tracklist.interface';
 
 export class UpdateRecordRequestDTO {
   @ApiProperty({
@@ -83,4 +86,8 @@ export class UpdateRecordRequestDTO {
   })
   @IsOptional()
   mbid?: string;
+
+  @IsOptional()
+  @IsArray()
+  tracklist?: ITrackList[];
 }

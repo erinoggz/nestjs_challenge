@@ -49,7 +49,7 @@ export class UpdateRecordRequestDTO {
   @ApiProperty({
     description: 'Quantity of the record in stock',
     type: Number,
-    example: 1000,
+    example: 10,
     required: false,
   })
   @IsInt()
